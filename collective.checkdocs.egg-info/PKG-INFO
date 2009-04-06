@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: collective.checkdocs
+Version: 0.0dev
+Summary: Distutils command to validate restructured text in package's long_description
+Home-page: UNKNOWN
+Author: Mikko Ohtamaa
+Author-email: mikko.ohtamaa@twinapex.com
+License: GPL
+Description: UNKNOWN
+Keywords: rest distutils egg validator check
+Platform: UNKNOWN

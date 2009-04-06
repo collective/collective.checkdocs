@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+collective.checkdocs.egg-info/PKG-INFO
+collective.checkdocs.egg-info/SOURCES.txt
+collective.checkdocs.egg-info/dependency_links.txt
+collective.checkdocs.egg-info/entry_points.txt
+collective.checkdocs.egg-info/not-zip-safe
+collective.checkdocs.egg-info/top_level.txt
+collectivecheckdocs/__init__.py
