@@ -1,6 +1,3 @@
-collective.checkdocs
-====================
-
 collective.checkdocs adds new distutils commands ``checkdocs`` and ``showdocs`` to validate restructured text in long_description field of Python eggs. 
 This package aims to make Python egg help page publishing and editing easier.
 
@@ -21,7 +18,7 @@ checkdocs
 
 Run long_description through reST to HTML converter and print errors and warnings to the standard output.
 
-Any errors and warnings will cause distutils to abort.
+Any errors or warnings will cause distutils to abort.
 
 Example::
 
@@ -32,7 +29,7 @@ Example::
 showdocs
 ---------
 
-Run long_description through reST to HTML converter and display the result in a local webbrowser. Runs a web server in port 6969 until CTRL+C is pressed.
+Run long_description through reST to HTML converter and display the result in a local web browser. Runs a web server in port 6969 until CTRL+C is pressed.
 
 Example::
 
@@ -40,6 +37,12 @@ Example::
   running showdocs
   reST to HTML conversion available at at http://localhost:6969/ - press CTRL+C to interrupt
 
+Author
+------
+
+Mikko Ohtamaa <mikko.ohtamaa@twinapex.com>
+
+`Twinapex Research, Oulu, Finland <http://www.twinapex.com>`_ - High quality Python hackers for hire
 
 Resources
 ---------
@@ -49,3 +52,5 @@ Resources
 * `docutils <http://docutils.sourceforge.net/>`_
 
 * `rstctl (inspiration and sources) <http://pypi.python.org/pypi/rstctl>`_
+
+* `How it all begun <http://www.nabble.com/Checking-long_description-format-(reST)-before-it-is-sent-to-PyPI-td15613184.html>`_

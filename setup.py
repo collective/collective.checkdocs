@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+version = '0.1.1'
 
 setup(name='collective.checkdocs',
       version=version,
@@ -11,10 +11,10 @@ setup(name='collective.checkdocs',
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='rest distutils egg validator check',
+      keywords='rest distutils egg validator check validation restructured text html documentation',
       author='Mikko Ohtamaa',
       author_email='mikko.ohtamaa@twinapex.com',
-      url='',
+      url='http://pypi.python.org/pypi/collective.checkdocs',
       license='GPL',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,        

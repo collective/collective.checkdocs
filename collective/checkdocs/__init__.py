@@ -1,3 +1,15 @@
+"""
+        
+        Provide checkdocs and showdocs commands for distutils.
+
+        Use docutils to do reST -> HTML translation. Hook into docutils via monkey-patching to get the error status out of it.
+
+"""
+
+__author__ = "Mikko Ohtamaa <mikko.ohtamaa@twinapex.com>"
+__license__ = "GPL"
+__copyright__ = "Twinapex Research"
+
 import os
 import sys
 import webbrowser
@@ -35,6 +47,7 @@ def do_GET(self):
 SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET = do_GET
 
 
+# This global holds errors/warnings spit out by docutils
 reports = []
 
 #
