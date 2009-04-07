@@ -5,9 +5,8 @@ version = '0.1'
 
 setup(name='collective.checkdocs',
       version=version,
-      description="Distutils command to validate restructured text in package's long_description",
-      long_description="""\
-""",
+      description="Distutils command to view and validate restructured text in package's long_description",
+      long_description=open("README.txt").read(),
       classifiers=[
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -19,12 +18,16 @@ setup(name='collective.checkdocs',
       license='GPL',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,        
-      namespace_packages="collective",
+      namespace_packages=["collective"],
       zip_safe=False,
       install_requires=[
           # -*- Extra requirements: -*-
+          "docutils"
       ],
-      entry_points="""
-      # -*- Entry points: -*-
-      """,
+      entry_points = {
+         "distutils.commands": [
+            "checkdocs = collective.checkdocs:checkdocs",
+            "showdocs = collective.checkdocs:showdocs",
+          ]
+        }
       )
