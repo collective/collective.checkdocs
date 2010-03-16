@@ -6,8 +6,20 @@ to HTML to show on the package page when package is published in distribution re
 Unfortunately, since repositories do poor job to validate incoming reST text, errors in the text will result to broken published
 package pages. 
 
-Unpublishing is usually very cumbersome. We save our time by validating reST input using ``checkdocs`` and ``showdocs`` commands.
+Unpublishing is usually very cumbersome. 
+We save our time by validating reST input using ``checkdocs`` and ``showdocs`` commands
+before submitting eggs to PyPi.
 
+Installation
+============
+
+Install this to your development Python run-time::
+
+        easy_install collective.checkdocs
+
+
+*Note*: On OSX at least Python version 2.5 or newer is required.
+        
 New commands
 ============
 
@@ -37,12 +49,23 @@ Example::
   running showdocs
   reST to HTML conversion available at at http://localhost:6969/ - press CTRL+C to interrupt
 
+Source code
+------------
+
+* https://svn.plone.org/svn/collective/collective.checkdocs
+
 Author
 ------
 
-Mikko Ohtamaa <mikko.ohtamaa@twinapex.com>
+`mFabrik Research Oy <mailto:info@mfabrik.com>`_ - Python and Plone professionals for hire.
 
-`Twinapex Research, Oulu, Finland <http://www.twinapex.com>`_ - High quality Python hackers for hire
+* `mFabrik web site <http://mfabrik.com>`_ 
+
+* `mFabrik mobile site <http://mfabrik.mobi>`_ 
+
+* `Blog <http://blog.mfabrik.com>`_
+
+* `More about Plone <http://mfabrik.com/technology/technologies/content-management-cms/plone>`_ 
 
 Resources
 ---------
