@@ -5,24 +5,26 @@
         Use docutils to do reST -> HTML translation. Hook into docutils via monkey-patching to get the error status out of it.
 
 """
+from __future__ import print_function
+
+import webbrowser
+from random import random
+from io import StringIO
+
+try:
+    from BaseHTTPServer import HTTPServer
+    from SimpleHTTPServer import SimpleHTTPRequestHandler
+except ImportError:
+    from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+from docutils.core import publish_parts
+
+from distutils.errors import CompileError
+from setuptools.command.setopt import option_base
 
 __author__ = "Mikko Ohtamaa <mikko.ohtamaa@twinapex.com>"
 __license__ = "GPL"
 __copyright__ = "Twinapex Research"
-
-import os
-import sys
-import webbrowser
-from random import random
-from cStringIO import StringIO
-import BaseHTTPServer
-import SimpleHTTPServer
-
-from docutils.core import publish_parts
-
-from distutils.errors import *
-from distutils import log
-from setuptools.command.setopt import edit_config, option_base, config_file
 
 def rst2html(value):
     """ Run rst2html translation """
@@ -36,7 +38,7 @@ def do_GET(self):
     """ Dummy web server which serves translated reST document """
     f = StringIO()
     self.send_response(200)
-    print >> f, self.value.encode('utf-8')
+    print(self.value.encode('utf-8'), file=f)
     self.send_header('Content-Type','text/html;charset=utf-8')
     self.end_headers()
     f.seek(0)
@@ -44,7 +46,7 @@ def do_GET(self):
     f.close()
     return
 
-SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET = do_GET
+SimpleHTTPRequestHandler.do_GET = do_GET
 
 
 # This global holds errors/warnings spit out by docutils
@@ -84,7 +86,6 @@ class checkdocs(option_base):
 
     def run(self):
         text = self.distribution.get_long_description()
-        docutils_settings = {}
 
         # Monkeypatch docutils for simple error/warning output support
         utils.Reporter.system_message = system_message
@@ -112,11 +113,11 @@ class showdocs(option_base):
         option_base.finalize_options(self)
 
     def run(self):
-        handler=SimpleHTTPServer.SimpleHTTPRequestHandler
+        handler = SimpleHTTPRequestHandler
         handler.value = rst2html(self.distribution.get_long_description())
-        httpd = BaseHTTPServer.HTTPServer(('',6969), handler)
+        httpd = HTTPServer(('',6969), handler)
         webbrowser.open('http://localhost:6969/%s' % random())
-        print 'reST to HTML conversion available at at http://localhost:6969/ - press CTRL+C to interrupt'
+        print('reST to HTML conversion available at at http://localhost:6969/ - press CTRL+C to interrupt')
         try:
             httpd.handle_request()
         except KeyboardInterrupt:

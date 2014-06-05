@@ -1,6 +1,11 @@
 History
 =======
 
+0.2 (unreleased)
+::::::::::::::::
+
+- Moved to github, support Python 3, set up tox, added tests, Pyroma level 10.
+
 0.1.2
 :::::
 

@@ -1,17 +1,17 @@
-import unittest
-import setuptools
+from collective.checkdocs import checkdocs, reports
 from distutils.dist import Distribution
 from distutils.errors import CompileError
-from collective.checkdocs import checkdocs, reports
+from io import StringIO
+import setuptools
 import sys
-import StringIO
+import unittest
 
 class CheckDocTest(unittest.TestCase):
     
     def setUp(self):
         # Silence the docutils errors
         self.stderr = sys.stderr
-        sys.stderr = StringIO.StringIO()
+        sys.stderr = StringIO()
         
     def tearDown(self):
         sys.stderr = self.stderr
