@@ -26,6 +26,7 @@ setup(name='collective.checkdocs',
           # -*- Extra requirements: -*-
           "docutils"
       ],
+      test_suite='collective.checkdocs.tests',
       entry_points = {
          "distutils.commands": [
             "checkdocs = collective.checkdocs:checkdocs",
