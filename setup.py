@@ -6,7 +6,7 @@ version = '0.3.dev0'
 setup(name='collective.checkdocs',
       version=version,
       description="Distutils command to view and validate restructured text in package's long_description",
-      long_description=open("README.txt").read(),
+      long_description=open("README.rst").read(),
       classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.6",
