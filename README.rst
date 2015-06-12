@@ -52,7 +52,7 @@ Example::
 Source code
 ------------
 
-* https://svn.plone.org/svn/collective/collective.checkdocs
+* https://github.com/collective/collective.checkdocs
 
 Authors
 -------
