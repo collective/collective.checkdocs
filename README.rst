@@ -1,12 +1,12 @@
-collective.checkdocs adds new distutils commands ``checkdocs`` and ``showdocs`` to validate restructured text in long_description field of Python eggs. 
+collective.checkdocs adds new distutils commands ``checkdocs`` and ``showdocs`` to validate restructured text in long_description field of Python eggs.
 This package aims to make Python egg help page publishing and editing easier.
 
 Eggs' long description field, which is usually also the README.txt file of the package, is reST formatted text. This text is converted
 to HTML to show on the package page when package is published in distribution repositories like PyPI or plone.org.
 Unfortunately, since repositories do poor job to validate incoming reST text, errors in the text will result to broken published
-package pages. 
+package pages.
 
-Unpublishing is usually very cumbersome. 
+Unpublishing is usually very cumbersome.
 We save our time by validating reST input using ``checkdocs`` and ``showdocs`` commands
 before submitting eggs to PyPi.
 
@@ -19,7 +19,7 @@ Install this to your development Python run-time::
 
 
 *Note*: On OSX at least Python version 2.5 or newer is required.
-        
+
 New commands
 ============
 
@@ -57,7 +57,7 @@ Source code
 Authors
 -------
 
-`Mikko Ohtamaa <https://opensourcehacker.com>`_ 
+`Mikko Ohtamaa <https://opensourcehacker.com>`_
 
 Resources
 ---------
@@ -69,3 +69,9 @@ Resources
 * `rstctl (inspiration and sources) <http://pypi.python.org/pypi/rstctl>`_
 
 * `How it all begun <http://www.nabble.com/Checking-long_description-format-(reST)-before-it-is-sent-to-PyPI-td15613184.html>`_
+
+License
+-------
+
+The project is licensed under the GPLv2.
+
