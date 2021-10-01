@@ -26,6 +26,7 @@ setup(name='collective.checkdocs',
       namespace_packages=["collective"],
       zip_safe=False,
       install_requires=[
+          "setuptools",
           # -*- Extra requirements: -*-
           "docutils"
       ],
