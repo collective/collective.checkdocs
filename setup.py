@@ -27,7 +27,8 @@ setup(name='collective.checkdocs',
       zip_safe=False,
       install_requires=[
           # -*- Extra requirements: -*-
-          "docutils"
+          "docutils>=0.12",
+          "Pygments>=2.1.3",
       ],
       test_suite='collective.checkdocs.tests',
       entry_points = {
